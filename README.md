@@ -133,8 +133,11 @@ Nejpomaleji zdražujícím artiklem napříč roky 2006-2018 je:
 #### Odpověď
 
 a) V dostupných datech neexistuje rok, kde by meziroční nárůst cen potravin byl výrazně vyšší než meziroční růst mezd. 
+
 b) Nejvýraznější rozdíly přinesl rok 2009, kde došlo k vyššímu poklesu cen potravin a průměrnému růstu mezd.
+
 c) Ojedinělý případ, kdy je absolutně nejvyšší rozdíl mezi růstem platů a cen zboží je rok 2013. Zde došlo k poklesu platů a běžnému růstu cen. Obecně lze hovořit o výjimce, protože za celé dostupné období platy narostly o 46.45%, kdežto mzdy o 34.46%. 
+
 d) V žádném z případů nedošlo k růstu cen/mez vyššímu než 10%. Nejblíže této hodnotě byl tok 2017, kde byl ale i růst platů vysoký a rozdíl je pouze +3.32%.
 
 **Tato otázka nemá výstupní tabulku.**
