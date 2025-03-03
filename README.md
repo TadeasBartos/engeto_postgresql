@@ -38,6 +38,7 @@ Odpovědi na otázky jsou zodpovězené přímo v SQL skriptu a zde v README. Po
 - Na základě srovnání mezd z předchozích let lze říct, že až na pár výjimek (14 záznamů ze 420) mzdy meziročně rostou.
 - Kompletní seznam jednotlivých odvětví, kde mzdy meziročně klesaly je zde:
 | ODVĚTVÍ | ROK | TREND |
+|---------|-----|-------|
 | Profesní, vědecké a technické činnosti | 2010 | KLESÁ |
 | Veřejná správa a obrana; povinné sociální zabezpečení | 2010 | KLESÁ |
 | Kulturní, zábavní a rekreační činnosti | 2011 | KLESÁ |
