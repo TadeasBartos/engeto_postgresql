@@ -21,7 +21,9 @@ left join czechia_price_category cpc
 	on cp.category_code = cpc.code
 group by rok, kod_zbozi, nazev_zbozi
 order by kod_zbozi asc, rok asc;
--- c) Výpočet procentuální změny všech položek v jednom roce.create view v_pct_zmena_cen_zbozi as
+
+-- c) Výpočet procentuální změny všech položek v jednom roce.
+create view v_pct_zmena_cen_zbozi as
 select
     rok,
     round(avg(cena_aktu_rok)::numeric, 2) AS prumerna_cena_tento_rok,
@@ -40,7 +42,8 @@ from v_ceny_zbozi_tento_minuly_rok
 group by rok
 order by rok;
 
--- d) Vytvoření view s rokem výplaty, výplatou daný rok a výplatou rok předchozí.create view v_vyplaty_tento_minuly_rok as
+-- d) Vytvoření view s rokem výplaty, výplatou daný rok a výplatou rok předchozí.
+create view v_vyplaty_tento_minuly_rok as
 select 
     payroll_year as rok_vyplaty,
     round(avg(value)::numeric, 2) as vyplata,
@@ -54,7 +57,8 @@ where value_type_code = 5958
 group by payroll_year
 order by payroll_year;
 
--- e) Vytvoření view a výpočet procentuální změny výplaty.create view v_pct_zmena_vyplat as
+-- e) Vytvoření view a výpočet procentuální změny výplaty.
+create view v_pct_zmena_vyplat as
 select *,
 	round(((vyplata / vyplata_predchozi_rok *100) - 100), 2) as pct_zmena_platu
 from v_vyplaty_tento_minuly_rok;
@@ -98,7 +102,7 @@ order by year;
 
 -- METRIKY:
 -- d) Korelace HDP a cen zbozi	
--- e) Korelace HDP a cen zbozi
+-- e) Korelace HDP a platu
 create view v_korelace as
 select
 	corr(pct_zmena_hdp, pct_zmena_cen) as hdp_ceny_korelace, 
