@@ -46,8 +46,8 @@ group by vzc.nazev, vzc.prumerna_cena, vzc.prumerna_cena_minuly_rok
 order by prumerna_zmena_ceny_pct asc
 limit 1; 
 
--- e) Ukážu výsledek.
-select *
+-- e) Ukážu výsledek (poue název položky a procento o které zdražila).
+select nazev, prumerna_zmena_ceny_pct
 from v_polozka;
 
 -- f) Úklid.
