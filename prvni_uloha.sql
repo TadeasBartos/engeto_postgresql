@@ -30,21 +30,33 @@ select *
 from v_tadeas_bartos_project_SQL_prvni_uloha;
 
 -- d) Vybereme všechny odvětví a roky kdy mzdy rostou.
-select *
+select name, 
+	rok, 
+	trend
 from v_tadeas_bartos_project_SQL_prvni_uloha
+left join czechia_payroll_industry_branch cpib 
+	on v_tadeas_bartos_project_SQL_prvni_uloha.kod_odvetvi = cpib.code
 where TREND = 'ROSTE'
-order by ROK; 
+order by ROK;
 
 -- e) Vybereme všechny odvětví a roky kdy mzdy klesají.
-select *
+-- f) Výsledky ukládáme do tabulky t_tadeas_bartos_project_SQL_primary_final
+create table t_tadeas_bartos_project_SQL_primary_final as
+select name, 
+	rok, 
+	trend
 from v_tadeas_bartos_project_SQL_prvni_uloha
+left join czechia_payroll_industry_branch cpib 
+	on v_tadeas_bartos_project_SQL_prvni_uloha.kod_odvetvi = cpib.code
 where TREND = 'KLESÁ'
 order by ROK;
 
--- f) Vymazání view: 
+-- f) Vymazání view+table: 
 drop view v_tadeas_bartos_project_SQL_prvni_uloha;
+drop table t_tadeas_bartos_project_SQL_primary_final;
 
 -- 1. ZÁVĚR
 -- Na základě srovnání mezd z předchozích let lze říct, že až na pár výjimek (14 záznamů ze 420) mzdy meziročně rostou.
+-- Kompletní seznam jednotlivých odvětví je v tabulce t_tadeas_bartos_project_SQL_primary_final.
 
 ----------------------------------------------------------------------------------------------------------------------------------
